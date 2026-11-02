@@ -69,6 +69,10 @@ aws --profile oss-public s3 cp s3://scratch/<名字>/f.bin .   # 外部下载
 公网路径只适合小文件/应急；**大批量数据搬运请把任务挪进 workspace 里跑**
 （pod 内 fabric 直连），不要从外面拉。
 
+**红线：pod 内 fabric 速度即使在高负载时段也应显著高于公网（~50 MiB/s）；
+如果实测接近或低于公网水平，立即联系管理员**（Lark 群「H200 算力-DexGEM」，
+附 demo 第 4 步的输出）。
+
 ### 命名公约（上传前必读）
 
 **路径第一段（一级前缀）必须是内部 codename**（`egoDag`、`cosmos3exp`、
